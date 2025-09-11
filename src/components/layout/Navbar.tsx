@@ -48,10 +48,10 @@ export default function Navbar(){
         </nav>
         {/* mobile dropdown menu */}    
             {isOpen && 
-            <div className="fixed inset-0 z-40 ">
+            <div className="fixed inset-0 z-40 sm:hidden ">
                 <div className="px-3 py-4 space-y-2 fixed top-26 rounded-lg right-0 w-40 h-50 shadow-lg bg-gray-200 ">
                     {Navlinks.map((link)=>(
-                        <Link to={link.href} key={link.href} className="block hover:text-blue-600 transition text">
+                        <Link to={link.href} key={link.href} className=" text-lg block hover:text-blue-600 transition text">
                         {link.lable}
                         </Link>
                     ))}
