@@ -65,12 +65,10 @@ export default function Navbar(){
                         {link.lable}
                         </Link>
                     ))}
-                </div>
-                <div className="flex md:hidden  space-x-6">
-                      {ButtonLinks.map((link)=>(
+                    {ButtonLinks.map((link)=>(
                        <MyButton href={link.href} label={link.lable}/>
                     ))}
-                 </div>
+                </div>
             </div>
             }
 
