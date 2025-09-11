@@ -1,7 +1,8 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Container from "../ui/Container";
+import MyButton from "../ui/Usenavigate";
 
 const Navlinks = [
     {href:'/',lable:'Home'},
@@ -40,7 +41,7 @@ export default function Navbar(){
                 {/* button links */}
                  <div className="hidden md:flex  space-x-6">
                       {ButtonLinks.map((link)=>(
-                       
+                       <MyButton href={link.href} label={link.lable}/>
                     ))}
                  </div>
 
@@ -57,7 +58,7 @@ export default function Navbar(){
         </nav>
         {/* mobile dropdown menu */}    
             {isOpen && 
-            <div className="fixed inset-0 z-40 sm:hidden ">
+            <div className="fixed inset-0 z-40 md:hidden ">
                 <div className="px-3 py-4 space-y-2 fixed top-26 rounded-lg right-0 w-40 h-50 shadow-lg bg-gray-200 ">
                     {Navlinks.map((link)=>(
                         <Link to={link.href} key={link.href} className=" text-lg block hover:text-blue-600 transition text">
@@ -65,6 +66,11 @@ export default function Navbar(){
                         </Link>
                     ))}
                 </div>
+                <div className="flex md:hidden  space-x-6">
+                      {ButtonLinks.map((link)=>(
+                       <MyButton href={link.href} label={link.lable}/>
+                    ))}
+                 </div>
             </div>
             }
 
