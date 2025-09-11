@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import Container from "../ui/Container";
 import MyButton from "../ui/Usenavigate";
@@ -37,6 +37,9 @@ export default function Navbar(){
                         {link.lable}
                         </Link>
                     ))}
+                    <div className="flex items-center space-x-4">
+                    <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
+                 </div>
                  </div>
                 {/* button links */}
                  <div className="hidden md:flex  space-x-6">
@@ -45,11 +48,17 @@ export default function Navbar(){
                     ))}
                  </div>
 
+                 {/* cart icon */}
+                 
+
                  {/* hamburger icon */}
-                 <div className="md:hidden">
+                 <div className="md:hidden flex items-center space-x-4">
                     <button className="h-8 w-8 flex items-center justify-center" onClick={()=>setIsOpen(!isOpen)}>
                         {isOpen ? <X size={28}/> : <Menu size={28} />}
                     </button>
+                    <div className="flex items-center space-x-4">
+                    <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
+                 </div>
                  </div>
                 </div>
             </div>
