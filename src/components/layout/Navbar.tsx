@@ -18,7 +18,7 @@ export default function Navbar(){
         <Container>
              <nav className="bg-gray-200 shadow-md w-full top-0 left-0 fixed z-50">
             <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-12">
                  {/* logo */}
                  <Link to="/" className="text-2xl font-bold">
                  SHOPEwave
