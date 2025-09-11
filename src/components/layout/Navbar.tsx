@@ -7,8 +7,8 @@ const Navlinks = [
     {href:'/',lable:'Home'},
     {href:'/about',lable:'About'},
     {href:'/products',lable:'Products'},
-    {href:'/signin',lable:'Login'},
-    {href:'/login',lable:'Products'},
+    {href:'/signin',lable:'Sign In'},
+    {href:'/login',lable:'Login'},
 ]
 
 export default function Navbar(){
