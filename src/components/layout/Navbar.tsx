@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Container from "../ui/Container";
@@ -7,7 +7,10 @@ const Navlinks = [
     {href:'/',lable:'Home'},
     {href:'/about',lable:'About'},
     {href:'/products',lable:'Products'},
-    {href:'/signin',lable:'Sign In'},
+   ]
+
+const ButtonLinks = [
+     {href:'/signin',lable:'Sign In'},
     {href:'/login',lable:'Login'},
 ]
 
@@ -32,6 +35,12 @@ export default function Navbar(){
                         className="hover:text-blue-700 transition">
                         {link.lable}
                         </Link>
+                    ))}
+                 </div>
+                {/* button links */}
+                 <div className="hidden md:flex  space-x-6">
+                      {ButtonLinks.map((link)=>(
+                       
                     ))}
                  </div>
 
