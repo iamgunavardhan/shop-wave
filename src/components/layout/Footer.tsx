@@ -1,13 +1,17 @@
+import { href } from "react-router-dom";
 import Container from "../ui/Container";
 
 const FooterLins =[
-    {href:'/',lable:'Home'},
-    {href:'/about',lable:'About'},
-    {href:'/products',lable:'Products'},
+    {href:'/privacy',lable:'Privacy'},
+    {href:'/terms',lable:'Terms'},
    ]
 
-   export default function(){
+   export default function Footer(){
     return(
-        <footer></footer>
+        <footer>
+            <Container>
+                <div></div>
+            </Container>
+        </footer>
     )
    }
