@@ -1,11 +1,15 @@
+import {BrowserRouter as Router, Routes,Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
  function App(){
     return(
-        <Layout>
-            <div className="flex items-center justify-center h-96">
-                <h1 className="text-2xl font-bold text-indigo-6">Welcome to ShopWave</h1>
-            </div>
-        </Layout>
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                </Routes>
+            </Layout>
+        </Router>
     )
 }
 
