@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type ContainerProps = {
+interface ContainerProps  {
     children: ReactNode
 }
 
