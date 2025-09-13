@@ -1,15 +1,16 @@
 import {BrowserRouter as Router, Routes,Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
+
+
  function App(){
     return(
         <Router>
-             <Routes>
-                <Route element={<Layout/>}>
+            <Layout>
+                <Routes>
                     <Route path="/" element={<Home/>}/>
-                </Route>
-             </Routes>
-            
+                </Routes>
+            </Layout>
         </Router>
     )
 }
