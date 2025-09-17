@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ProductsProps{
     id:number;
     name:string;
@@ -5,10 +7,13 @@ interface ProductsProps{
     image:string;
 }
 
-export default function ProductCard({name, price, image}:ProductsProps){
+export default function ProductCard({name, price, image,id}:ProductsProps){
     return(
         <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond">
-            <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-48"/>
+            <Link to={`/produts/${id}`}>
+               <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-48"/>
+            </Link>
+           
             <div className="p-3">
                 <h2 className="font-semibold text-gray-800 text-lg">{name}</h2>
                 <p className="text-md font-normal text-gray-600">${price.toFixed(2)}</p>
