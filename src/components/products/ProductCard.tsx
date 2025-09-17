@@ -7,12 +7,12 @@ interface ProductsProps{
 
 export default function ProductCard({name, price, image}:ProductsProps){
     return(
-        <div>
-            <img/>
-            <div>
-                <h2></h2>
-                <p></p>
-                <button></button>
+        <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond">
+            <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-48"/>
+            <div className="p-3">
+                <h2 className="font-semibold text-gray-800 text-lg">{name}</h2>
+                <p className="text-md font-normal text-gray-600">${price.toFixed(2)}</p>
+                <button className="mt-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 transition-all w-full py-2">Add Cart</button>
             </div>
         </div>
     )
