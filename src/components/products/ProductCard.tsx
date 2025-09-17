@@ -10,7 +10,7 @@ interface ProductsProps{
 export default function ProductCard({name, price, image,id}:ProductsProps){
     return(
         <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond">
-            <Link to={`/produts/${id}`}>
+            <Link to={`/products/${id}`}>
                <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-48"/>
             </Link>
            
