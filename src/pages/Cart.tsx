@@ -15,7 +15,7 @@ if(cartItems.length === 0){
 }
 
 return(
-    <div className=" p-10 ">
+    <div className=" p-10 overflow-hidden">
         <h2 className="text-bold text-3xl mb-6">Shopping Cart</h2>
         <div className="space-y-6">
             {cartItems.map((item)=>(
@@ -35,22 +35,29 @@ return(
                                 <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
                             </div>
                        </div>
-                       {/* quantity controls */}
-                       <div className="flex items-center space-x-3">
-                            <button onClick={()=> decreaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">-</button>
-                            <span>{item.quantity}</span>
-                            <button onClick={()=> increaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">+</button>
+                       {/* double wrap */}
+                       <div className="flex flex-col sm:flex-row space-y-3 items-center">
+                          {/* quantity controls */}
+                          <div className="flex items-center space-x-3">
+                                    <button onClick={()=> decreaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">-</button>
+                                    <span>{item.quantity}</span>
+                                    <button onClick={()=> increaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">+</button>
+                          </div>
+                            {/* wrap */}
+                            <div className="flex flex-col space-4 "> 
+                                {/* subtotal */}
+                                <div className="w-24 text-center">
+                                ${(item.price * item.quantity).toFixed(2)}
+                                </div>
+                                {/* remove item */}
+                                <button
+                                        onClick={() => removeFromCart(item.id)}
+                                        className="text-red-600 hover:underline" >
+                                        <span className="hidden sm:inline">Remove</span>
+                                        <span className="sm:hidden">❌</span>
+                                </button>
+                            </div>
                        </div>
-                       {/* subtotal */}
-                        <div className="w-24 text-right">
-                           ${(item.price * item.quantity).toFixed(2)}
-                        </div>
-                       {/* remove item */}
-                        <button
-                            onClick={() => removeFromCart(item.id)}
-                            className="text-red-600 hover:underline" >
-                            Remove
-                        </button>
                 </div>
             ))}
         </div>
