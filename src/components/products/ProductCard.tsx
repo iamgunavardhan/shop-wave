@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import useCartContext from "../../context/Usecontext";
 
 interface ProductsProps{
     id:number;
@@ -8,6 +9,8 @@ interface ProductsProps{
 }
 
 export default function ProductCard({name, price, image,id}:ProductsProps){
+const {addToCart} = useCartContext()
+
     return(
         <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond">
             <Link to={`/products/${id}`}>
@@ -17,7 +20,9 @@ export default function ProductCard({name, price, image,id}:ProductsProps){
             <div className="p-3">
                 <h2 className="font-semibold text-gray-800 text-lg">{name}</h2>
                 <p className="text-md font-normal text-gray-600">${price.toFixed(2)}</p>
-                <button className="mt-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 transition-all w-full py-2">Add Cart</button>
+                <button 
+                onClick={()=> addToCart({id,price,name,image})}
+                className="mt-3 rounded-lg bg-indigo-500 hover:bg-indigo-400 transition-all w-full py-2">Add Cart</button>
             </div>
         </div>
     )
