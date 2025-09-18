@@ -2,7 +2,7 @@ import useCartContext from "../context/Usecontext";
 
 export default function Cart(){
      
-    const {cartItems, removeFromCart} = useCartContext()
+    const {cartItems, removeFromCart,increaseQty, decreaseQty} = useCartContext()
 
     const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity,0)
 
@@ -34,6 +34,12 @@ return(
                                 <p className="text-gray-600">${item.price.toFixed(2)}</p>
                                 <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
                             </div>
+                       </div>
+                       {/* quantity controls */}
+                       <div className="flex items-center space-x-3">
+                            <button onClick={()=> decreaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">-</button>
+                            <span>{item.quantity}</span>
+                            <button onClick={()=> increaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">+</button>
                        </div>
                        {/* remove item */}
                         <button
