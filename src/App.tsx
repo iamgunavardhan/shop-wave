@@ -4,11 +4,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/Productdetail";
+import { CartProvider } from "./context/CartContext";
 
 
  function App(){
     return(
-        
+        <CartProvider>
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
@@ -18,6 +19,7 @@ import ProductDetails from "./pages/Productdetail";
                 </Routes>
             </Layout>
             
+        </CartProvider>        
     )
 }
 
