@@ -3,6 +3,7 @@ import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import Container from "../ui/Container";
 import MyButton from "../ui/Usenavigate";
+import useCartContext from "../../context/Usecontext";
 
 const Navlinks = [
     {href:'/',lable:'Home'},
@@ -16,6 +17,8 @@ const ButtonLinks = [
 ]
 
 export default function Navbar(){
+    const {cartItems} = useCartContext()
+    const cartCount = cartItems.reduce((acc,item) => acc + item.quantity,0)
     const[isOpen, setIsOpen] = useState(false)
 
     return(
@@ -58,8 +61,13 @@ export default function Navbar(){
                         {isOpen ? <X size={28}/> : <Menu size={28} />}
                     </button>
                     <div className="flex items-center space-x-4">
-                    <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
-                 </div>
+                        <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
+                        {cartCount > 0 && (
+                            <span className="abosolute -top-2 -right-2 bg-indigo-600 text-xs font-bold rounded-full px-2 py-0.5">
+                                {cartCount}
+                            </span>
+                        )}
+                    </div>
                  </div>
                 </div>
             </div>
