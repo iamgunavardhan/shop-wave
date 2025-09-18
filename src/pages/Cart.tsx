@@ -41,6 +41,10 @@ return(
                             <span>{item.quantity}</span>
                             <button onClick={()=> increaseQty(item.id)}  className="px-2 py-1 border rounded hover:bg-gray-100">+</button>
                        </div>
+                       {/* subtotal */}
+                        <div className="w-24 text-right">
+                           ${(item.price * item.quantity).toFixed(2)}
+                        </div>
                        {/* remove item */}
                         <button
                             onClick={() => removeFromCart(item.id)}
