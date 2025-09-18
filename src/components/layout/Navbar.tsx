@@ -42,8 +42,15 @@ export default function Navbar(){
                         </Link>
                     ))}
                     <div className="flex items-center space-x-4">
-                    <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
-                 </div>
+                      <div className="relative">
+                            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
+                            {cartCount > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-indigo-600 text-xs font-bold rounded-full px-2 py-0.5">
+                                    {cartCount}
+                                </span>
+                            )}
+                       </div>
+                    </div>
                  </div>
                 {/* button links */}
                  <div className="hidden md:flex  space-x-6">
@@ -61,12 +68,14 @@ export default function Navbar(){
                         {isOpen ? <X size={28}/> : <Menu size={28} />}
                     </button>
                     <div className="flex items-center space-x-4">
-                        <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
-                        {cartCount > 0 && (
-                            <span className="abosolute -top-2 -right-2 bg-indigo-600 text-xs font-bold rounded-full px-2 py-0.5">
-                                {cartCount}
-                            </span>
-                        )}
+                       <div className="relative">
+                            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-indigo-600 transition cursor-pointer"/>
+                            {cartCount > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-indigo-600 text-xs font-bold rounded-full px-2 py-0.5">
+                                    {cartCount}
+                                </span>
+                            )}
+                       </div>
                     </div>
                  </div>
                 </div>
