@@ -1,4 +1,5 @@
 import useCartContext from "../context/Usecontext";
+import { Link } from "react-router-dom";
 
 export default function Cart(){
      
@@ -66,9 +67,12 @@ return(
              <h3 className="text-xl font-bold">
                 Total: <span className="text-indigo-600">${total.toFixed(2)}</span>
             </h3>
-            <button className="mt-4 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
-                Checkout
-            </button>
+            <Link
+                to="/checkout"
+                className="inline-block mt-4 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700"
+                >
+                Proceed to Checkout
+            </Link>
         </div>
 
     </div>
