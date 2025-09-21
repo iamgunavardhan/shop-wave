@@ -4,6 +4,7 @@ import { useState } from "react";
 import Container from "../ui/Container";
 import MyButton from "../ui/Usenavigate";
 import useCartContext from "../../context/Usecontext";
+import UseAuthCont from "../../context/UseauthContext";
 
 const Navlinks = [
     {href:'/',lable:'Home'},
@@ -11,13 +12,9 @@ const Navlinks = [
     {href:'/products',lable:'Products'},
    ]
 
-const ButtonLinks = [
-     {href:'/signin',lable:'Sign In'},
-    {href:'/login',lable:'Login'},
-]
-
 export default function Navbar(){
     const {cartItems} = useCartContext()
+      const { user, logout } = UseAuthCont()
     const cartCount = cartItems.reduce((acc,item) => acc + item.quantity,0)
     const[isOpen, setIsOpen] = useState(false)
 
@@ -54,14 +51,12 @@ export default function Navbar(){
                        </div>
                     </div>
                  </div>
-                {/* button links */}
-                 <div className="hidden md:flex  space-x-6">
-                      {ButtonLinks.map((link)=>(
-                       <MyButton href={link.href} label={link.lable}/>
-                    ))}
-                 </div>
+                {/* right side */}
+                <div>
+                    
+                </div>
 
-                 {/* cart icon */}
+                 
                  
 
                  {/* hamburger icon */}
@@ -93,11 +88,6 @@ export default function Navbar(){
                 <div className="px-3 py-4 space-y-2 fixed top-26 rounded-lg right-0 w-40 h-50 shadow-lg bg-gray-200 ">
                     {Navlinks.map((link)=>(
                         <Link to={link.href} key={link.href} className=" text-lg block hover:text-blue-600 transition ">
-                        {link.lable}
-                        </Link>
-                    ))}
-                    {ButtonLinks.map((link)=>(
-                       <Link to={link.href} key={link.href} className=" text-lg block hover:text-blue-600 transition ">
                         {link.lable}
                         </Link>
                     ))}
