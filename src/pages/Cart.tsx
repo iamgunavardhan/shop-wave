@@ -10,9 +10,11 @@ export default function Cart(){
 
 if(cartItems.length === 0){
       return(
-       <div className="p-10 text-center">
+       <Container>
+        <div className="p-10 text-center">
          <h2 className="text-2xl font-bold text-gray-700">Your Cart is Empty</h2>
        </div>
+       </Container>
     )
 }
 

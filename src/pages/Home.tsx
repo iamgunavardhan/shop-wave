@@ -24,6 +24,11 @@ export default function Home(){
                     </div>
                 </div>
              </section>
+
+             {/* Featured Section */}
+             <section>
+                
+             </section>
             
         </div>
        
