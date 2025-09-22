@@ -1,6 +1,7 @@
 import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UseAuthCont from "../context/UseauthContext";
+import Container from "../components/ui/Container";
 
 export default function Login(){
     const { login } = UseAuthCont();
@@ -15,7 +16,8 @@ export default function Login(){
   };
 
   return(
-    <div className="flex justify-center items-center w-full min-h-screen ">
+    <Container>
+      <div className="flex justify-center items-center w-full min-h-screen ">
         <form  onSubmit={handleSubmit}
         className="bg-gray-50 p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
             <h2 className="text-2xl font-bold text-center">Welcome Back</h2>
@@ -35,5 +37,6 @@ export default function Login(){
           className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700">Login</button>
         </form>
     </div>
+    </Container>
   )
 }

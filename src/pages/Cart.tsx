@@ -1,3 +1,4 @@
+import Container from "../components/ui/Container";
 import useCartContext from "../context/Usecontext";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,8 @@ if(cartItems.length === 0){
 }
 
 return(
-    <div className=" p-10 overflow-hidden">
+   <Container>
+     <div className=" p-10 overflow-hidden">
         <h2 className="text-bold text-3xl mb-6">Shopping Cart</h2>
         <div className="space-y-6">
             {cartItems.map((item)=>(
@@ -76,6 +78,7 @@ return(
         </div>
 
     </div>
+   </Container>
 )
   
 

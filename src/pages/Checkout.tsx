@@ -1,3 +1,4 @@
+import Container from "../components/ui/Container";
 import useCartContext from "../context/Usecontext";
 import { useState } from "react";
 
@@ -21,6 +22,7 @@ export default function Checkout(){
     }
 
     return(
+      <Container>
         <div className="p-10 grid grid-cols-1 md:grid-cols-3 gap-10">
             <form onSubmit={(e) => {e.preventDefault();setSubmitted(true)}} className="md:col-span-2 space-y-6">
                 <h2 className="text-2xl font-bold">Checkout</h2>
@@ -69,5 +71,6 @@ export default function Checkout(){
                  </div>
              </div>
         </div>
+      </Container>
     )
 }

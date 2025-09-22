@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import MockProducts from "../components/products/Mockproducts";
 import useCartContext from "../context/Usecontext";
+import Container from "../components/ui/Container";
 
 
 export default function ProductDetails(){
@@ -17,7 +18,8 @@ export default function ProductDetails(){
     }
 
     return(
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
+       <Container>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
            <img src={product.image} alt={product.name} className="rounded-t-lg w-full object-cover h-96"/>
             <div >
                 <h2 className="mt-4 font-semibold text-gray-800 text-lg">{product.name}</h2>
@@ -32,5 +34,6 @@ export default function ProductDetails(){
                 className="mt-6 rounded-lg bg-indigo-500 hover:bg-indigo-400 transition-all w-full py-2">Add Cart</button>
             </div>
         </div>
+       </Container>
     )
 }

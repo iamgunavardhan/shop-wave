@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UseAuthCont from "../context/UseauthContext";
+import Container from "../components/ui/Container";
 
 export default function Signup(){
     const {signup} = UseAuthCont()
@@ -16,7 +17,8 @@ export default function Signup(){
     }
 
     return(
-        <div className="flex justify-center items-center min-h-screen ">
+        <Container>
+            <div className="flex justify-center items-center min-h-screen ">
             <form onSubmit={handleSubmit}  className="bg-gray-50 p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
                 <h2 className="text-2xl font-bold text-center">Create Account</h2>
                 <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} required className="w-full border px-4 py-2 rounded-lg"/>
@@ -25,5 +27,6 @@ export default function Signup(){
                 <button  type="submit" className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700">Sign Up</button>
             </form>
         </div>
+        </Container>
     )
 }
