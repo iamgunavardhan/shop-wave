@@ -15,9 +15,9 @@ export default function Login(){
   };
 
   return(
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+    <div className="flex justify-center items-center w-full min-h-screen ">
         <form  onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
+        className="bg-gray-50 p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
             <h2 className="text-2xl font-bold text-center">Welcome Back</h2>
             <input type="email"
                 placeholder="Email Address"

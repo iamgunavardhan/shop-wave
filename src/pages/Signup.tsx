@@ -16,8 +16,8 @@ export default function Signup(){
     }
 
     return(
-        <div className="flex justify-center items-center min-h-screen bg-gray-50">
-            <form onSubmit={handleSubmit}  className="bg-white p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
+        <div className="flex justify-center items-center min-h-screen ">
+            <form onSubmit={handleSubmit}  className="bg-gray-50 p-8 rounded-xl shadow-md w-full max-w-md space-y-6">
                 <h2 className="text-2xl font-bold text-center">Create Account</h2>
                 <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} required className="w-full border px-4 py-2 rounded-lg"/>
                 <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full border px-4 py-2 rounded-lg"/>

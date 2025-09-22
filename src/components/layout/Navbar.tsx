@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import Container from "../ui/Container";
-import MyButton from "../ui/Usenavigate";
 import useCartContext from "../../context/Usecontext";
 import UseAuthCont from "../../context/UseauthContext";
 
@@ -52,8 +51,20 @@ export default function Navbar(){
                     </div>
                  </div>
                 {/* right side */}
-                <div>
-                    
+                <div className="flex items-center space-x-6">
+                     {/* Auth */}
+                     {user ? (
+                       <>
+                        <span className="text-gray-700">Hello {user.name}</span>
+                        <button onClick={logout}
+                        className="text-red-600 hover:underline">Logout</button>
+                       </>
+                     ):(
+                        <>
+                        <Link to="/login" className="text-gray-700 hover:text-indigo-600">Login</Link>
+                        <Link to="/signup" className="text-gray-700 hover:text-indigo-600">Sign Up</Link>
+                        </>
+                     )}
                 </div>
 
                  
