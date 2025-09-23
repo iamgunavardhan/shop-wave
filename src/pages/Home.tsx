@@ -157,6 +157,18 @@ export default function Home(){
                    </div>
                 </Container>
               </section>
+
+            {/* Newsletter Signup */}
+            <section className="bg-indigo-600 py-16">
+              <Container>
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4"> Join Our Newsletter</h2>
+                <p className="text-indigo-200 mb-8"> Be the first to know about new arrivals, exclusive deals, and special offers.</p>
+                <form  onSubmit={(e) => e.preventDefault()}  className="flex flex-col sm:flex-row items-center gap-4">
+                    <input type="email" placeholder="Enter your email" required  className="flex-1 w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none" />
+                    <button type="submit"  className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-indigo-100 transition"> Subscribe</button>
+                </form>
+              </Container>
+            </section>
             
         </div>
        
