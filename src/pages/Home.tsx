@@ -4,14 +4,14 @@ export default function Home(){
       
          <div className="min-h-screen bg-gray-50">
              {/* Hero Banner */}
-             <section  className="relative bg-indigo-600 text-white">
-                <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 flex flex-col lg:flex-row items-center gap-12">
+             <section  className="relative  text-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 flex flex-col lg:flex-row items-center gap-12 bg-gray-800 rounded-b-2xl">
                    {/* text */}
                     <div className="flex-1 space-y-6">
                         <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight">Shope the latest trends <br /> 
                         <span className="text-indigo-200">at your fingertips.</span>
                         </h1>
-                        <p className="text-lg lg:text-xl text-indigo-100">  Discover stylish collections, unbeatable prices, and seamless
+                        <p className="text-lg lg:text-xl text-indigo-200">  Discover stylish collections, unbeatable prices, and seamless
                         shopping — all in one place.</p>
                         <Link  to="/products"
                             className="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-100 transition"
@@ -19,7 +19,7 @@ export default function Home(){
 
                     </div>
                     {/* Image */}
-                    <div className="flex-1">
+                    <div className="hidden lg:flex  lg:flex-1" >
                      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Shopping" className="rounded-xl shadow-lg"/>
                     </div>
                 </div>
@@ -32,21 +32,21 @@ export default function Home(){
                     <Link to="/products" className="group relative overflow-hidden rounded-xl shadow-lg">
                       <img src="/Fashion.png" alt="Fashion" 
                       className="w-full h-64 object-cover group-hover:scale-110 transition-transform"/>
-                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                          <span className="text-white text-xl font-semibold"> Fashion</span>
                       </div>
                     </Link>
 
                     <Link to="/products" className="group relative overflow-hidden rounded-xl shadow-lg">
                        <img src="/Accessories.png" alt="Accessories" className="w-full h-64 object-cover group-hover:scale-110 transition-transform"/>
-                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div className="absolute inset-0  bg-black/40 flex items-center justify-center">
                            <span className="text-white text-xl font-semibold">Accessories</span>
                         </div>
                     </Link>
 
-                    <Link to="/products" className="group relative overflow-hidden rounded-xl shadow-lg">
+                    <Link to="/products" className="group relative  overflow-hidden rounded-xl shadow-lg">
                         <img src="/Electronics.png" alt="Electronics" className="w-full h-64 object-cover group-hover:scale-110 transition-transform" />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                          <div className="absolute inset-0  bg-black/40 flex items-center justify-center">
                             <span className="text-white text-xl font-semibold">Electronics</span>
                           </div>
                     </Link>
