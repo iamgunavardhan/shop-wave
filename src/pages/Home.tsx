@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import MockProducts from "../components/products/Mockproducts"
 export default function Home(){
     return(
       
@@ -76,6 +77,32 @@ export default function Home(){
                         <p className="text-gray-600">  Got questions? Our support team is always ready to help.</p>
                      </div>
                  </div>
+               </div>
+             </section>
+             {/* Featured Products */}
+             <section className="py-16 bg-gray-50">
+               <div className="max-w-7xl mx-auto px-6 lg:px-12">
+                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-12">Featured Products</h2>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                      {MockProducts.slice(0,3).map((product) => (
+                        <div  key={product.id} className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden flex flex-col">
+                            <img src={product.image} alt={product.name}  className="w-full h-64 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow">
+                                 <h3 className="text-lg font-semibold mb-2">  {product.name}</h3> 
+                                 <p className="text-gray-600 mb-4">${product.price}</p>
+                                 <Link to={`/products/${product.id}`} className="mt-auto inline-block text-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                                     View Details
+                                 </Link>
+                            </div>
+                        </div>
+                      ))}  
+                   </div>
+
+                   <div className="text-center mt-12">
+                     <Link  to="/products" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition">
+                       View All Products
+                     </Link>
+                   </div>
                </div>
              </section>
             
