@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import MockProducts from "../components/products/Mockproducts"
+import Container from "../components/ui/Container"
 export default function Home(){
     return(
       
@@ -55,7 +56,7 @@ export default function Home(){
              </section>
              {/* Benefits Section */}
              <section className="bg-white py-16">
-               <div className="max-w-7xl mx-auto px-6 lg:px-12">
+               <Container>
                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-12"> Why Shop With Us</h2>
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                      {/* Free Shipping */}
@@ -77,11 +78,11 @@ export default function Home(){
                         <p className="text-gray-600">  Got questions? Our support team is always ready to help.</p>
                      </div>
                  </div>
-               </div>
+                </Container>
              </section>
              {/* Featured Products */}
              <section className="py-16 bg-gray-50">
-               <div className="max-w-7xl mx-auto px-6 lg:px-12">
+               <Container>
                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-12">Featured Products</h2>
                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                       {MockProducts.slice(0,3).map((product) => (
@@ -103,8 +104,59 @@ export default function Home(){
                        View All Products
                      </Link>
                    </div>
-               </div>
+               </Container>
              </section>
+
+              {/* Testimonials Section */}
+              <section className="bg-white py-16">
+                <Container>
+                   <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-12"> What Our Customers Say</h2>
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      {/* Testimonial 1 */}
+                      <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+                        <p className="text-gray-600 mb-4"> 
+                           “Amazing shopping experience! Fast delivery and quality
+                            products. I’ll definitely shop here again.”
+                        </p>
+                        <div className="flex items-center gap-4">
+                           <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer"  className="w-12 h-12 rounded-full"/>
+                           <div>
+                              <h4 className="font-semibold">Emily Johnson</h4>
+                                <p className="text-yellow-500">★★★★★</p>
+                           </div>
+                        </div>
+                      </div>
+                      {/* Testimonial 2 */}
+                      <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+                        <p className="text-gray-600 mb-4"> 
+                           “Great selection of products at unbeatable prices. Customer
+                             support was super helpful too!”
+                        </p>
+                        <div className="flex items-center gap-4">
+                           <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Customer"  className="w-12 h-12 rounded-full"/>
+                           <div>
+                              <h4 className="font-semibold">Michael Lee</h4>
+                                <p className="text-yellow-500">★★★★★</p>
+                           </div>
+                        </div>
+                      </div>
+                      {/* Testimonial 3 */}
+                      <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+                        <p className="text-gray-600 mb-4"> 
+                          “Stylish and modern design! The checkout process was super easy
+                             and smooth. Highly recommended.”
+                        </p>
+                        <div className="flex items-center gap-4">
+                           <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer"  className="w-12 h-12 rounded-full"/>
+                           <div>
+                              <h4 className="font-semibold">Sophia Martinez</h4>
+                                <p className="text-yellow-500">★★★★★</p>
+                           </div>
+                        </div>
+                      </div>
+                   </div>
+                </Container>
+              </section>
             
         </div>
        
