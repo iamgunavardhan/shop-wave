@@ -9,7 +9,7 @@ const FooterLinks =[
 
    export default function Footer(){
     return(
-        <footer className="border-t mt-10 bg-gray-200 py-4 ">
+        <footer className="border-t  bg-gray-200 py-4 ">
             <Container>
                 <div className="flex justify-between items-center text-sm text-gray-600 py-6">
                     <p>{new Date().getFullYear()} ShopWave. All rights reserved.</p>
