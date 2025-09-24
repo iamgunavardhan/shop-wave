@@ -20,7 +20,7 @@ export default function About(){
                 Our Mission
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
-                At <span className="font-semibold">ShopEase</span>, we believe
+                At <span className="font-semibold">ShopWave</span>, we believe
                 shopping should be simple, enjoyable, and accessible to everyone. Our
                 mission is to connect customers with high-quality products at
                 affordable prices, all while delivering exceptional service and
@@ -43,7 +43,7 @@ export default function About(){
                     Our Story
                     </h2>
                     <p className="text-gray-600 leading-relaxed mb-4">
-                    Founded in 2023, ShopEase started as a small project with a big
+                    Founded in 2023, ShopWave started as a small project with a big
                     dream: to bring people closer to the products they love through
                     technology. With a passion for design and innovation, we’ve built
                     a platform that puts customers first.
