@@ -14,7 +14,7 @@ const {addToCart} = useCartContext()
     return(
         <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond ">
             <Link to={`/products/${id}`}>
-               <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-48"/>
+               <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-64 object-center"/>
             </Link>
            
             <div className="p-3 flex flex-col flex-grow">
