@@ -12,7 +12,7 @@ export default function ProductCard({name, price, image,id}:ProductsProps){
 const {addToCart} = useCartContext()
 
     return(
-        <div className="rounded-lg bg-white shadow-sm hover:shadow-md border transitiond ">
+        <div className="rounded-lg bg-white shadow-sm hover:shadow-md border-gray-200 transitiond ">
             <Link to={`/products/${id}`}>
                <img src={image} alt={name} className="rounded-t-lg w-full object-cover h-64 object-center"/>
             </Link>

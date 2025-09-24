@@ -86,8 +86,8 @@ export default function Home(){
                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-12">Featured Products</h2>
                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                       {MockProducts.slice(0,3).map((product) => (
-                        <div  key={product.id} className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden flex flex-col">
-                            <img src={product.image} alt={product.name}  className="rounded-t-lg w-full object-cover h-64 object-centerr" />
+                        <div  key={product.id} className="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col">
+                            <img src={product.image} alt={product.name}  className="rounded-t-lg w-full object-cover h-64 object-center" />
                             <div className="p-6 flex flex-col flex-grow">
                                  <h3 className="text-lg font-semibold mb-2">  {product.name}</h3> 
                                  <p className="text-gray-600 mb-4">${product.price}</p>

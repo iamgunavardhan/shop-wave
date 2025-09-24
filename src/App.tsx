@@ -11,12 +11,14 @@ import { AuthProvider } from "./context/AuthContext";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import ProtectedRoutes from "./components/auth/ProtectedRoute";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 
  function App(){
     return(
         <AuthProvider>
             <CartProvider>
+                <ScrollToTop />
                 <Routes>
                         <Route element={<Layout />}>
                         <Route path="/" element={<Home />} />
