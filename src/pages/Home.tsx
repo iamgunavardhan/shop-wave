@@ -161,17 +161,17 @@ export default function Home(){
             {/* Newsletter Signup */}
             <section className="bg-white py-16">
               <Container>
-                <div className="flex flex-col lg:flex-row gap-30 items-center justify-between">
-                   <div className="flex-1 space-x-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
+                   <div className="flex-1 text-center md:text-left">
                        <h2 className="text-2xl text-black lg:text-3xl font-bold mb-4"> Join Our Newsletter</h2>
                         <p className="text-gray-800 mb-8"> Be the first to know about new arrivals, exclusive deals, and special offers.</p>
-                        <form  onSubmit={(e) => e.preventDefault()}  className="flex flex-col sm:flex-row items-center gap-4">
-                            <input type="email" placeholder="Enter your email" required  className="flex w-[500px] px-4 py-3 rounded-lg text-gray-300 focus:outline-none bg-gray-800 " />
-                            <button type="submit"  className="bg-black text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-600 transition"> Subscribe</button>
+                        <form  onSubmit={(e) => e.preventDefault()}  className="flex flex-col sm:flex-row items-center gap-3">
+                            <input type="email" placeholder="Enter your email" required   className="w-full sm:w-[300px] lg:w-[400px] px-4 py-3 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none bg-gray-800"/>
+                            <button type="submit"   className="bg-black text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-600 transition"> Subscribe</button>
                         </form>
                    </div>
-                   <div className="flex-1 space-x-6" >
-                      <img src="/newsletter.png" alt="Newsletter" className="rounded-xl shadow-lg" width={300} height={500}/>
+                   <div  className="flex-1 hidden md:flex justify-center" >
+                      <img src="/newsletter.png" alt="Newsletter"  className="rounded-xl shadow-lg w-[250px] md:w-[300px] lg:w-[350px] h-auto"/>
                    </div>
                 </div>
               </Container>
