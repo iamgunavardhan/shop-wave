@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+# ShopWave — Minimal eCommerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, modern React + Vite eCommerce demo with Tailwind CSS. Built for learning and rapid prototyping.
 
-Currently, two official plugins are available:
+License: MIT
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick start
 
-## Expanding the ESLint configuration
+1. Install dependencies  
+   npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. Run dev server  
+   npm run dev
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. Build for production  
+   npm run build
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+See scripts in [package.json](package.json).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## What’s inside
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- App entry: [`src/main.tsx`](src/main.tsx) → [`App`](src/App.tsx) ([routes & layout](src/App.tsx))
+- UI layout: [`components/layout/Layout.tsx`](src/components/layout/Layout.tsx), [`Navbar`](src/components/layout/Navbar.tsx), [`Footer`](src/components/layout/Footer.tsx)
+- Product list & mock data: [`ProductCard`](src/components/products/ProductCard.tsx), [`MockProducts`](src/components/products/Mockproducts.tsx)
+- State & auth: [`CartProvider`](src/context/CartContext.tsx), [`AuthProvider`](src/context/AuthContext.tsx), hooks [`useCartContext`](src/context/Usecontext.tsx), [`UseAuthCont`](src/context/UseauthContext.tsx)
+- Routing & protection: [`ProtectedRoutes`](src/components/auth/ProtectedRoute.tsx)
+- Vite config: [vite.config.ts](vite.config.ts)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Notes
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Styling via Tailwind CSS (see [vite.config.ts](vite.config.ts) and [src/index.css](src/index.css)).
+- Static assets are in the `public/` folder and referenced from components.
+- This repo is intended as a UI demo — authentication and payments are mocked.
